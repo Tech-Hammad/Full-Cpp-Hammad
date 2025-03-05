@@ -1,42 +1,42 @@
-// Linear Searching in arrays
-
+// Linear Searching in Array
 #include <iostream>
 using namespace std;
 
-int LinearSearch(int arr[], int n, int key)
+void LinearSearch(int arr[], int n, int key)
 {
-
-    for (int i = 0; i < n; i++)
+    bool found = false;    // Flag to track if key is found
+    for (int i = 0; i < n; i++) 
     {
-        if (arr[i] == key)
+        if (arr[i] == key) 
         {
-            return i;
+            cout << "Found at Index: " << i << "\n";
+            found = true;
+            break; 
         }
     }
-    return -1;
+    if (!found) 
+    {
+        cout << "Not Found.\n";
+    }
 }
 
 int main()
 {
-    int n;
-    cout << "Enter size of array :";
+    int n,key;
+    cout << "Enter size of array: ";
     cin >> n;
+    int *arr = new int[n];   // Dynamic allocation of Array
 
-    // --NOTE--
-    // Variable-length arrays may cause errors in some compilers.
-    // If your compiler does not support this, use dynamic memory allocation (e.g., 'new') or a fixed-size array.
-
-    int arr[n];
+    cout<< "Enter Elements of Array:-\n";
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
     }
 
-    int key;
-    cout << "Enter number you want to search key :";
+    cout << "Enter the Key to Search:";
     cin >> key;
-
-    cout << LinearSearch(arr, n, key) << endl;
-
+    
+    LinearSearch(arr, n, key);
+    delete arr;
     return 0;
 }
