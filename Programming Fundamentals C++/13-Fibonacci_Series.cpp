@@ -26,7 +26,7 @@ int main()
     int choice;
     do {
         cout << "----------Menu----------" << endl;
-        cout << "1. Generate Fibonacci series up to nth Term.endl";
+        cout << "1. Generate Fibonacci series up to nth Term." << endl;
         cout << "2. Generate Fibonacci series from Starting Term to Ending Term." << endl;
         cout << "3. Exit." << endl;
         cout << "Enter your Choice: ";
