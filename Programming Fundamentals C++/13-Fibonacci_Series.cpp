@@ -3,20 +3,28 @@ using namespace std;
 
 void generateFibonacci(int startTerm, int endTerm)
 {
+    if (endTerm < 0)
+    {
+        cout << "Invalid range!" << endl;
+    }
+    if (endTerm == 0)
+    {
+        cout << "0" << endl;
+    }
     int* Series = new int[endTerm + 1]; 
     Series[0] = 0;
     Series[1] = 1;
 
     for (int i = 2; i <= endTerm; i++) 
     {
-        Series[i] = Series[i - 1] + Series[i - 2]; // n= n-1 + n-2
+        Series[i] = Series[i - 1] + Series[i - 2];   // n = (n-1) + (n-2)
     }
 
     for (int j = startTerm; j <= endTerm; j++)
     {
         cout << Series[j] << " ";
     }
-    cout << "endl";
+    cout << endl;
 
     delete[] Series; 
 }
@@ -24,7 +32,8 @@ void generateFibonacci(int startTerm, int endTerm)
 int main()
 {
     int choice;
-    do {
+    do
+    {
         cout << "----------Menu----------" << endl;
         cout << "1. Generate Fibonacci series up to nth Term." << endl;
         cout << "2. Generate Fibonacci series from Starting Term to Ending Term." << endl;
@@ -53,7 +62,7 @@ int main()
         } 
         else if (choice == 3) 
         {
-            cout << "Exiting...endl";
+            cout << "Exiting...." <<endl;
         } 
         else
         {
