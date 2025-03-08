@@ -1,43 +1,37 @@
-// Bubble Sort : Repetedly swap two adjacent elemnet if they are in wrong order
-
+// Bubble Sort: Repeatedly swap two adjacent elements if they are in the wrong order
 #include <iostream>
 using namespace std;
 
 int main()
 {
-    // --NOTE--
-    // Variable-length arrays may cause errors in some compilers.
-    // If your compiler does not support this, use dynamic memory allocation (e.g., 'new') or a fixed-size array.
+    int size = 5;
+    int arr[size];
 
-    int n;
-    cout << "Enter size of array :";
-    cin >> n;
-
-    int arr[n];
-
-    for (int i = 0; i < n; i++)
+    cout << "Enter " << size << " elements: ";
+    for (int i = 0; i < size; i++)
     {
         cin >> arr[i];
     }
 
-    int counter = 1; // for diff iterations
-    while (counter < n - 1)
+    for (int i = 0; i < size - 1; i++)
     {
-        for (int i = 0; i < n - counter; i++)
+        for (int j = 0; j < size - i - 1; j++) // `size - i - 1` for optimization
         {
-            if (arr[i] > arr[i + 1])
+            if (arr[j] > arr[j + 1])
             {
-                int temp = arr[i];
-                arr[i] = arr[i + 1];
-                arr[i + 1] = temp;
+                // Swap elements
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
             }
         }
-        counter++;
     }
 
-    for (int i = 0; i < n; i++)
+    cout << "Sorted array: ";
+    for (int i = 0; i < size; i++)
     {
         cout << arr[i] << " ";
     }
+    
     return 0;
 }
