@@ -8,9 +8,8 @@ int main()
     int n, max = 0;
     cout << "Enter size of array :";
     cin >> n;
-
-    int arr[n];
-
+    int arr[n];  // Initialized Array With Size
+    cout << "Enter the Array Elements:-" << endl;
     for (int i = 0; i < n; i++)
     {
         cin >> arr[i];
@@ -23,7 +22,7 @@ int main()
             max = arr[i];
         }
     }
-
-    cout << "The maximun num in this array is :" << max;
+    cout << "The Maximun Number in this Array is :" << max << endl;
+    
     return 0;
 }
