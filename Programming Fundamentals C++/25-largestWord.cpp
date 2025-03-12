@@ -1,5 +1,4 @@
-// Finding largest word in an array
-
+// Finding Length of Largest Word in an array
 #include <iostream>
 using namespace std;
 
@@ -12,11 +11,9 @@ int LongestWordLength(char arr[])
         len++;
     }
 
-    int larg = 0, curr_len = 0, i;
-
+    int larg = 0, curr_len = 0;
     for (int i = 0; i < len; i++)
     {
-
         if (arr[i] != ' ')
         {
             curr_len++;
@@ -27,15 +24,15 @@ int LongestWordLength(char arr[])
             curr_len = 0;
         }
     }
-
     return max(larg, curr_len);
 }
 
 int main()
 {
     char arr[100];
+    cout << "Enter the Paragraph:-";
     cin.getline(arr, 100);
-
-    cout << LongestWordLength(arr);
+    cout << "Largest Length of Word is:-" << LongestWordLength(arr);
+    
     return 0;
 }
