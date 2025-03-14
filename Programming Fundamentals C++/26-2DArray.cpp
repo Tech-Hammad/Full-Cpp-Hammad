@@ -1,15 +1,14 @@
-// INPUT IN 2D ARRAY AND OUTPUT
-
+// INPUT IN 2D ARRAY AND OUTPUT AND SEARCHING INDEX
 #include <iostream>
 using namespace std;
 int main()
 {
     int n, m;
-    cout << "ENter num of rows and column :";
+    cout << "Enter Number of Rows and Columns:-";
     cin >> n >> m;
 
     int arr[n][m];
-
+    cout << "Enter " << n << " Rows and " << m << " Columns:-" << endl;
     for (int i = 0; i < n; i++)
     {
         for (int j = 0; j < m; j++)
@@ -29,7 +28,7 @@ int main()
 
     // Searching index in 2D array
     int x;
-    cout << "Enter number you want to search index in row and column :";
+    cout << "Enter Number Which Index you want to Search in 2D Array:-";
     cin >> x;
 
     bool flag = false;
@@ -40,7 +39,7 @@ int main()
         {
             if (arr[i][j] == x)
             {
-                cout << i << " " << j << endl; // this will givw index of row and column
+                cout << "Index:- Row " << i << " Column " << j << endl;  // this will give index of row and column
                 flag = true;
             }
         }
@@ -52,7 +51,7 @@ int main()
     }
     else
     {
-        cout << "Not Found";
+        cout << "Number Not Found";
     }
     return 0;
 }
