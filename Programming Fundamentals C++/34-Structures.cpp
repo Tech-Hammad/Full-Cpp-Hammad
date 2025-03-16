@@ -1,5 +1,4 @@
 // Structures, Unions & Enums in C++
-
 #include <iostream>
 using namespace std;
 
@@ -10,17 +9,17 @@ typedef struct players
     float score;
 } pl;
 
-int main(){
-
-    // struct players Hammad;
-    pl Hammad;  // typedef lga k player ki jgha sirf ep b likh skty hain
+int main()
+{
+    // Struct players Hammad;
+    pl Hammad;  // By Applying typedef we will use pl as Object instead of Players
     Hammad.num=20;
     Hammad.favChar='a';
     Hammad.score=169;
 
-    cout<<"Fav Number of daniyal is "<<Hammad.num<<endl;
-    cout<<"FavChar of daniyal is "<<Hammad.favChar<<endl;
-    cout<<"Score of daniyal is "<<Hammad.score<<endl;
+    cout<<"Fav Number of Hammad is "<<Hammad.num<<endl;
+    cout<<"FavChar of Hammad is "<<Hammad.favChar<<endl;
+    cout<<"Score of Hammad is "<<Hammad.score<<endl;
 
     return 0;
 }
