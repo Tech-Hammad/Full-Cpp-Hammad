@@ -1,58 +1,53 @@
 // Binary Search :In this we dont start finding element from start we start from mid bcz it decreases time complexity
-
-#include <iostream>
+#include<iostream>
 using namespace std;
 
-int BinarySearch(int arr[], int n, int key)
+int BinarySearch(int arr[], int low, int high, int x)
 {
-    int start = 0;
-    int end = n;
+	while (low <= high)
+	{
+        int mid = low + (high - low) / 2;
 
-    while (start <= end)
-    {
-        int mid = (start + end) / 2;
-
-        if (arr[mid] == key)
-        {
+        // if x is present at mid
+        if (arr[mid] == x)
+        { 
             return mid;
         }
 
-        else if (arr[mid] > key)
+        // If x is greater than mid ignore left 
+        if (arr[mid] < x)
         {
-            end = mid - 1;
+            low = mid + 1;
         }
 
+        // If x is smaller than mid ignore right 
         else
         {
-            start = mid + 1;
+            high = mid - 1;
         }
-    }
-
+	}
     return -1;
 }
 
 int main()
 {
+    int arr[] = { 2, 3, 4, 10, 40 };
+    int x;
+    int n = sizeof(arr) / sizeof(arr[0]);
 
-    // --NOTE--
-    // Variable-length arrays may cause errors in some compilers.
-    // If your compiler does not support this, use dynamic memory allocation (e.g., 'new') or a fixed-size array.
+    cout << "Enter the Key to Search:-";
+    cin >> x;
 
-    int n;
-    cout << "Enter size of array :";
-    cin >> n;
-    int arr[n];
-
-    cout << "Enter numbers in array :";
-    for (int i = 0; i < n; i++)
+    int result = BinarySearch(arr, 0, n - 1, x);
+    
+    if (result == -1)
     {
-        cin >> arr[i];
+        cout << "Element is not present in array";
+    }
+    else
+    {
+        cout << "Element is present at index " << result;
     }
 
-    int key;
-    cout << "Enter number you want to search index :";
-    cin >> key;
-
-    cout << BinarySearch(arr, n, key) << endl;
-    return 0;
+	return 0;
 }
