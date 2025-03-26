@@ -1,49 +1,49 @@
 // Selection Sort : We replace min num in array with first num of array
-#include <iostream>
+#include<iostream>
 using namespace std;
+
+void Selection_Sort(int arr[], int n)
+{
+	for (int i = 0;i < n - 1;i++)
+	{
+		int minimum = i;
+
+		for (int j = i + 1;j < n;j++)
+		{
+			if (arr[j] < arr[minimum])
+			{
+				minimum = j;
+			}
+		}
+		int temp = arr[minimum];
+		arr[minimum] = arr[i];
+		arr[i] = temp;
+	}
+
+	cout << "After Selection Sort:-" << "\n";
+	cout << "Array:- ";
+	for (int i = 0; i < n; i++) 
+	{
+		cout << arr[i] << ", ";
+	}
+	cout << "\n";
+}
 
 int main()
 {
-    int n;
-    cout << "Enter size of array :";
-    cin >> n;
+	int arr[] = { 12,46,3,21,2,9,11,32 };
+	int n = sizeof arr / sizeof arr[0];
 
-    int arr[n];
+	cout << "Before Selection Sort:-\n";
+	cout << "Array:- ";
+	for (int i = 0;i < n;i++)
+	{
+		cout << arr[i] << ", ";
+	}
+	cout << "\n";
 
-    for (int i = 0; i < n; i++)
-    {
-        cin >> arr[i];
-    }
+	Selection_Sort(arr, n);
 
-    // int arr[5]=2,1,6,3,4
-
-    // for sorting
-    for (int i = 0; i < n - 1; i++)
-    {
-        for (int j = i + 1; j < n; j++)
-        {
-            if (arr[j] < arr[i])
-            {
-                int temp = arr[j];
-                arr[j] = arr[i];
-                arr[i] = temp;
-            }
-        }
-    }
-
-    // print sortred array
-    cout << "Sorted array :";
-    for (int i = 0; i < n; i++)
-    {
-        cout << arr[i] << " ";
-    }
-    return 0;
+	return 0;
 }
-/*
-with example
 
-Initially, arr is [5, 8, 12].
-int temp = arr[j]; sets temp to the value at arr[2], which is 12. So, temp becomes 12.
-arr[j] = arr[i]; assigns the value at arr[0] (which is 5) to arr[2]. So, arr becomes [5, 8, 5].
-Finally, arr[i] = temp; assigns the value stored in temp (which is 12) to arr[0]. So, arr becomes [12, 8, 5].
-*/
